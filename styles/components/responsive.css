@@ -1,0 +1,277 @@
+/* Adaptações para tablets, celulares, telas estreitas e orientação horizontal. */
+
+@media (max-width: 900px) {
+  .game-shell {
+    padding: 24px 14px;
+  }
+
+  .game-card {
+    width: min(100%, 760px);
+  }
+
+  .board.level-avancado {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 680px) {
+  .game-shell {
+    display: block;
+    padding: 12px;
+  }
+
+  .game-card {
+    min-height: calc(100vh - 24px);
+    padding: 22px 17px 28px;
+    border-radius: 25px;
+  }
+
+  .game-header {
+    align-items: flex-start;
+  }
+
+  .brand {
+    font-size: 0.64rem;
+  }
+
+  .ghost-button {
+    padding: 8px 10px;
+    font-size: 0.72rem;
+  }
+
+  .intro,
+  .setup-intro,
+  .game-intro {
+    margin-top: 43px;
+  }
+
+  .setup-intro {
+    margin-bottom: 29px;
+  }
+
+  .level-options {
+    grid-template-columns: 1fr;
+  }
+
+  .choice-button {
+    padding: 12px;
+  }
+
+  .choice-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .start-button {
+    margin-top: 27px;
+  }
+
+  .stats {
+    margin-bottom: 12px;
+  }
+
+  .stat {
+    padding: 11px 6px;
+  }
+
+  .stat-label {
+    font-size: 0.56rem;
+  }
+
+  .stat strong {
+    font-size: 0.96rem;
+  }
+
+  .scoreboard {
+    margin-bottom: 15px;
+  }
+
+  .board.level-avancado {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 440px) {
+  .game-card {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+  .game-header {
+    gap: 8px;
+  }
+
+  .brand {
+    gap: 6px;
+    font-size: 0.55rem;
+    letter-spacing: 0.09em;
+  }
+
+  .brand-mark {
+    width: 24px;
+    height: 24px;
+    border-radius: 7px;
+  }
+
+  .ghost-button {
+    gap: 5px;
+    padding: 7px 8px;
+    font-size: 0.66rem;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 12vw, 2.9rem);
+  }
+
+  .subtitle {
+    margin-top: 14px;
+    font-size: 0.84rem;
+  }
+
+  .setup-group {
+    margin-bottom: 20px;
+  }
+
+  .setup-label {
+    font-size: 0.68rem;
+  }
+
+  .player-options {
+    grid-template-columns: 1fr;
+  }
+
+  .choice-copy small {
+    white-space: normal;
+  }
+
+  .stats {
+    border-radius: 12px;
+  }
+
+  .stat {
+    padding: 9px 3px;
+  }
+
+  .stat-label {
+    letter-spacing: 0.05em;
+  }
+
+  .stat strong {
+    font-size: 0.86rem;
+  }
+
+  .player-score {
+    flex: 1;
+    min-width: 0;
+    padding: 7px 9px;
+    font-size: 0.68rem;
+  }
+
+  .board {
+    gap: 7px;
+  }
+
+  .board.level-iniciante,
+  .board.level-intermediario,
+  .board.level-avancado {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card-front {
+    font-size: 1.25rem;
+  }
+
+  .card-back {
+    font-size: clamp(1.35rem, 11vw, 2.25rem);
+  }
+
+  .game-message {
+    margin-top: 18px;
+    font-size: 0.73rem;
+  }
+
+  .modal-content {
+    padding: 34px 20px 24px;
+  }
+}
+
+@media (max-width: 350px) {
+  .game-shell {
+    padding: 0;
+  }
+
+  .game-card {
+    min-height: 100vh;
+    border-radius: 0;
+  }
+
+  .brand {
+    max-width: 135px;
+    line-height: 1.2;
+  }
+
+  .stats {
+    width: calc(100% + 4px);
+    margin-right: -2px;
+    margin-left: -2px;
+  }
+
+  .stat-label {
+    font-size: 0.5rem;
+  }
+
+  .stat strong {
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-height: 650px) and (orientation: landscape) {
+  .game-shell {
+    display: block;
+    padding: 12px;
+  }
+
+  .game-card {
+    max-width: 940px;
+    margin: 0 auto;
+    padding-top: 17px;
+    padding-bottom: 20px;
+  }
+
+  .setup-intro,
+  .game-intro {
+    margin-top: 25px;
+    margin-bottom: 19px;
+  }
+
+  .setup-group {
+    margin-bottom: 14px;
+  }
+
+  .start-button {
+    margin-top: 17px;
+  }
+
+  .board.level-iniciante {
+    max-width: 390px;
+  }
+
+  .board.level-intermediario {
+    max-width: 430px;
+  }
+
+  .board.level-avancado {
+    max-width: 560px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

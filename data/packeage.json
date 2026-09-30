@@ -1,0 +1,53 @@
+{
+  "theme": "Carros",
+  "cards": [
+    {
+      "name": "Carro esportivo",
+      "emoji": "🏎️"
+    },
+    {
+      "name": "Carro clássico",
+      "emoji": "🚗"
+    },
+    {
+      "name": "Táxi",
+      "emoji": "🚕"
+    },
+    {
+      "name": "SUV",
+      "emoji": "🚙"
+    },
+    {
+      "name": "Ônibus",
+      "emoji": "🚌"
+    },
+    {
+      "name": "Carro de polícia",
+      "emoji": "🚓"
+    },
+    {
+      "name": "Ambulância",
+      "emoji": "🚑"
+    },
+    {
+      "name": "Caminhão de bombeiros",
+      "emoji": "🚒"
+    },
+    {
+      "name": "Caminhão",
+      "emoji": "🚚"
+    },
+    {
+      "name": "Picape",
+      "emoji": "🛻"
+    },
+    {
+      "name": "Minivan",
+      "emoji": "🚐"
+    },
+    {
+      "name": "Sedã",
+      "emoji": "🚘"
+    }
+  ]
+}

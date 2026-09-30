@@ -1,0 +1,17 @@
+:root {
+  --night: #050912;
+  --night-deep: #02050b;
+  --panel: rgba(10, 18, 31, 0.88);
+  --panel-soft: rgba(16, 29, 47, 0.74);
+  --ink: #f2f7ff;
+  --muted: #8292a8;
+  --cyan: #35dcff;
+  --cyan-soft: #a7efff;
+  --violet: #9c6dff;
+  --magenta: #ff4f9a;
+  --amber: #ffc857;
+  --red: #ff5b62;
+  --line: rgba(126, 172, 211, 0.2);
+  --line-bright: rgba(53, 220, 255, 0.62);
+  --shadow: 0 30px 90px rgba(0, 0, 0, 0.56);
+}

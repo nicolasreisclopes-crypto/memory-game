@@ -1,0 +1,81 @@
+.ghost-button {
+  gap: 8px;
+  padding: 10px 14px;
+  color: var(--cyan-soft);
+  cursor: pointer;
+  background: rgba(4, 10, 19, 0.55);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  transition: 180ms ease;
+}
+
+.ghost-button:hover,
+.ghost-button:focus-visible {
+  color: var(--ink);
+  background: rgba(53, 220, 255, 0.13);
+  border-color: var(--line-bright);
+  box-shadow: 0 0 20px rgba(53, 220, 255, 0.16);
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.start-button {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 32px auto 0;
+}
+
+.start-button span:last-child {
+  margin-left: auto;
+  font-size: 1.2rem;
+}
+
+.primary-button {
+  position: relative;
+  justify-content: center;
+  width: 100%;
+  padding: 14px 18px;
+  overflow: hidden;
+  color: #06101b;
+  cursor: pointer;
+  background: linear-gradient(100deg, var(--cyan), #75f1e1 52%, var(--violet));
+  border: 0;
+  border-radius: 9px;
+  box-shadow: 0 0 23px rgba(53, 220, 255, 0.25);
+  font-weight: 700;
+  transition: 180ms ease;
+}
+
+.primary-button::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -40%;
+  width: 25%;
+  content: "";
+  background: rgba(255, 255, 255, 0.62);
+  filter: blur(8px);
+  transform: skewX(-20deg);
+  transition: left 650ms ease;
+}
+
+.primary-button:hover,
+.primary-button:focus-visible {
+  box-shadow: 0 0 32px rgba(53, 220, 255, 0.5);
+  outline: none;
+  transform: translateY(-3px) scale(1.01);
+}
+
+.primary-button:hover::before,
+.primary-button:focus-visible::before {
+  left: 125%;
+}
+
+.primary-button:disabled {
+  cursor: wait;
+  filter: grayscale(0.7);
+  opacity: 0.55;
+}

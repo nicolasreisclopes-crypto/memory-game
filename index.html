@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Jogo da memória com carros, fases e modo para um ou dois jogadores."
+    />
+    <title>Memória Motor — Night Drive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="game-card" aria-labelledby="game-title">
+        <header class="game-header">
+          <div class="brand">
+            <span class="brand-mark" aria-hidden="true">🏁</span>
+            <span>MEMÓRIA MOTOR <em>NIGHT DRIVE</em></span>
+          </div>
+          <button class="ghost-button" id="restart-button" type="button">
+            <span aria-hidden="true">↻</span>
+            Configurar jogo
+          </button>
+        </header>
+
+        <section class="setup-screen" id="setup-screen" aria-labelledby="setup-title">
+          <div class="intro setup-intro">
+            <p class="eyebrow">Paddock noturno · desafio sobre rodas</p>
+            <h1 id="setup-title">Ligue os motores.</h1>
+            <p class="subtitle">
+              Selecione a fase e decida se vai jogar sozinho ou desafiar alguém.
+            </p>
+          </div>
+
+          <div class="setup-group">
+            <h2 class="setup-label">1. Escolha a fase</h2>
+            <div class="choice-grid level-options" role="group" aria-label="Escolha a fase">
+              <button class="choice-button is-selected" type="button" data-level="iniciante" aria-pressed="true">
+                <span class="choice-icon" aria-hidden="true">🚗</span>
+                <span class="choice-copy">
+                  <strong>Iniciante</strong>
+                  <small>6 pares · 12 cartas</small>
+                </span>
+              </button>
+              <button class="choice-button" type="button" data-level="intermediario" aria-pressed="false">
+                <span class="choice-icon" aria-hidden="true">🏎️</span>
+                <span class="choice-copy">
+                  <strong>Intermediário</strong>
+                  <small>8 pares · 16 cartas</small>
+                </span>
+              </button>
+              <button class="choice-button" type="button" data-level="avancado" aria-pressed="false">
+                <span class="choice-icon" aria-hidden="true">🏁</span>
+                <span class="choice-copy">
+                  <strong>Avançado</strong>
+                  <small>12 pares · 24 cartas</small>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <div class="setup-group">
+            <h2 class="setup-label">2. Quem vai jogar?</h2>
+            <div class="choice-grid player-options" role="group" aria-label="Escolha o número de jogadores">
+              <button class="choice-button is-selected" type="button" data-players="1" aria-pressed="true">
+                <span class="choice-icon" aria-hidden="true">👤</span>
+                <span class="choice-copy">
+                  <strong>1 jogador</strong>
+                  <small>Supere seu próprio recorde</small>
+                </span>
+              </button>
+              <button class="choice-button" type="button" data-players="2" aria-pressed="false">
+                <span class="choice-icon" aria-hidden="true">👥</span>
+                <span class="choice-copy">
+                  <strong>2 jogadores</strong>
+                  <small>Disputa por pontos</small>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <button class="primary-button start-button" id="start-button" type="button">
+            <span>Começar partida</span>
+            <span aria-hidden="true">→</span>
+          </button>
+        </section>
+
+        <section class="game-screen is-hidden" id="game-screen" aria-labelledby="game-title">
+          <div class="intro game-intro">
+            <p class="eyebrow" id="game-mode-label">Fase iniciante · 1 jogador</p>
+            <h1 id="game-title">Encontre os pares.</h1>
+            <p class="subtitle" id="game-subtitle">
+              Vire duas cartas por vez e encontre os carros iguais.
+            </p>
+          </div>
+
+          <div class="stats" aria-label="Estatísticas do jogo">
+            <div class="stat">
+              <span class="stat-label">Jogadas</span>
+              <strong id="moves">0</strong>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Tempo</span>
+              <strong id="timer">00:00</strong>
+            </div>
+            <div class="stat stat-turn">
+              <span class="stat-label" id="turn-label">Pontos</span>
+              <strong id="turn-value">0</strong>
+            </div>
+            <div class="stat stat-best">
+              <span class="stat-label">Melhor</span>
+              <strong id="best-score">—</strong>
+            </div>
+          </div>
+
+          <div class="scoreboard" id="scoreboard" aria-label="Placar da partida">
+            <div class="player-score is-active" id="player-1-score">
+              <span class="player-dot" aria-hidden="true"></span>
+              <span class="player-name">Jogador 1</span>
+              <strong>0</strong>
+            </div>
+            <div class="player-score" id="player-2-score">
+              <span class="player-dot" aria-hidden="true"></span>
+              <span class="player-name">Jogador 2</span>
+              <strong>0</strong>
+            </div>
+          </div>
+
+          <div
+            class="board level-iniciante"
+            id="board"
+            aria-label="Tabuleiro do jogo da memória"
+            role="grid"
+          ></div>
+
+          <p class="game-message" id="game-message" role="status">
+            Boa sorte. Você consegue!
+          </p>
+        </section>
+      </section>
+    </main>
+
+    <div class="win-modal" id="win-modal" aria-hidden="true">
+      <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="win-title">
+        <span class="confetti-icon" aria-hidden="true">🏆</span>
+        <p class="eyebrow">Corrida concluída</p>
+        <h2 id="win-title">Você encontrou todos!</h2>
+        <p class="result-text" id="result-text">
+          Terminou em <strong id="final-time">00:00</strong> com
+          <strong id="final-moves">0 jogadas</strong>.
+        </p>
+        <p class="final-score" id="final-score"></p>
+        <button class="primary-button" id="play-again-button" type="button">
+          Jogar novamente
+        </button>
+      </div>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

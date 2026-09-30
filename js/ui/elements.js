@@ -1,0 +1,23 @@
+export const ui = {
+    setupScreen: document.querySelector("#setup-screen"),
+    gameScreen: document.querySelector("#game-screen"),
+    board: document.querySelector("#board"),
+    movesElement: document.querySelector("#moves"),
+    timerElement: document.querySelector("#timer"),
+    bestScoreElement: document.querySelector("#best-score"),
+    gameMessage: document.querySelector("#game-message"),
+    restartButton: document.querySelector("#restart-button"),
+    startButton: document.querySelector("#start-button"),
+    winModal: document.querySelector("#win-modal"),
+    winTitle: document.querySelector("#win-title"),
+    finalTimeElement: document.querySelector("#final-time"),
+    finalMovesElement: document.querySelector("#final-moves"),
+    finalScoreElement: document.querySelector("#final-score"),
+    playAgainButton: document.querySelector("#play-again-button"),
+    gameModeLabel: document.querySelector("#game-mode-label"),
+    gameSubtitle: document.querySelector("#game-subtitle"),
+    turnLabel: document.querySelector("#turn-label"),
+    turnValue: document.querySelector("#turn-value"),
+    playerOneScore: document.querySelector("#player-1-score"),
+    playerTwoScore: document.querySelector("#player-2-score")
+};

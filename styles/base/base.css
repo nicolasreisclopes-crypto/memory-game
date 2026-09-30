@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--night-deep);
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 13% 8%, rgba(53, 220, 255, 0.16), transparent 25%),
+    radial-gradient(circle at 91% 80%, rgba(156, 109, 255, 0.17), transparent 27%),
+    linear-gradient(135deg, #070d18 0%, #03060c 72%);
+  font-family: "DM Sans", sans-serif;
+}
+
+body::before,
+body::after {
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+  content: "";
+}
+
+/* Faixas de pista e grade técnica no fundo. */
+body::before {
+  inset: 0;
+  background:
+    linear-gradient(90deg, transparent 49.8%, rgba(53, 220, 255, 0.055) 50%, transparent 50.2%),
+    linear-gradient(0deg, transparent 49.8%, rgba(53, 220, 255, 0.04) 50%, transparent 50.2%);
+  background-size: 70px 70px;
+  mask-image: linear-gradient(to bottom, transparent, black 22%, black 75%, transparent);
+  opacity: 0.9;
+}
+
+/* Luzes desfocadas de cidade. */
+body::after {
+  top: 12%;
+  right: -4%;
+  width: 30vw;
+  height: 30vw;
+  max-width: 420px;
+  max-height: 420px;
+  background: var(--magenta);
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.09;
+}
+
+button {
+  font: inherit;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+/* Regra utilitária flex compartilhada por vários componentes */
+.game-header,
+.brand,
+.ghost-button,
+.stats,
+.stat,
+.card,
+.primary-button,
+.scoreboard,
+.player-score {
+  display: flex;
+  align-items: center;
+}

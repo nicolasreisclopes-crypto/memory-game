@@ -1,0 +1,82 @@
+.game-shell {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  min-height: 100vh;
+  padding: 34px 18px;
+  place-items: center;
+}
+
+.game-shell::before,
+.game-shell::after {
+  position: fixed;
+  z-index: -1;
+  width: 10px;
+  height: 155px;
+  content: "";
+  background: var(--amber);
+  box-shadow: 0 0 18px rgba(255, 200, 87, 0.9);
+  opacity: 0.72;
+  transform: skewX(-24deg);
+  animation: road-lights 5s linear infinite;
+}
+
+.game-shell::before {
+  top: -180px;
+  left: 9%;
+}
+
+.game-shell::after {
+  top: -180px;
+  right: 14%;
+  width: 5px;
+  opacity: 0.35;
+  animation-delay: -2.3s;
+}
+
+.game-card {
+  position: relative;
+  width: min(100%, 930px);
+  padding: clamp(24px, 5vw, 54px);
+  overflow: hidden;
+  background:
+    linear-gradient(145deg, rgba(13, 27, 44, 0.94), rgba(4, 9, 18, 0.94)),
+    var(--panel);
+  border: 1px solid rgba(101, 157, 198, 0.32);
+  border-radius: 28px;
+  box-shadow:
+    0 0 0 1px rgba(53, 220, 255, 0.06),
+    0 0 65px rgba(53, 220, 255, 0.1),
+    var(--shadow);
+  isolation: isolate;
+}
+
+.game-card::before,
+.game-card::after {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+}
+
+/* Brilho de farol atravessando o painel. */
+.game-card::before {
+  top: -70%;
+  left: -20%;
+  width: 80%;
+  height: 220%;
+  background: linear-gradient(100deg, transparent 42%, rgba(53, 220, 255, 0.06) 50%, transparent 58%);
+  transform: rotate(18deg);
+  animation: headlight-sweep 9s ease-in-out infinite;
+}
+
+/* Linha de neon no topo do painel. */
+.game-card::after {
+  top: 0;
+  right: 11%;
+  left: 11%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cyan), var(--violet), transparent);
+  box-shadow: 0 0 16px var(--cyan);
+  opacity: 0.85;
+}
